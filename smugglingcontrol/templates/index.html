@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Firebase Data</title>
+
+<!-- <meta http-equiv="refresh" content="5"> -->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+  body {
+    color: #000000;
+    background-color:#6677ba79;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+  }
+  table, th, td {
+  border: 3px solid rgb(187, 9, 9);
+  border-collapse: collapse;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+tr:nth-child(odd) {
+  background-color: #dddcdc;
+}
+th {
+  height: 50px;
+  background-color:#b37cb879;
+  font-family: 'Roboto', sans-serif;
+
+}
+td {
+  height: 40px;
+}
+  table.tableAlign {
+  margin-left: 4%; 
+  margin-right: 0;
+  width: 90%;
+  border-collapse: collapse;
+}
+
+
+.refreshButton {
+  background-color:#5bbd4386;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: sans-serif;
+  border-radius: 20%;
+  color: rgb(255, 255, 255);
+  padding: 10px 15px;
+  text-align: center;
+  display: inline-block;
+  margin: 4px 4px;
+  cursor: pointer;
+  margin-left: 45%;
+  margin-right: 0;
+
+
+}
+h1{
+  margin-left: 4%; 
+  margin-right: 0;
+  width: 90%;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: rgb(0, 0, 0);
+  
+}
+
+
+
+</style>
+  
+</head>
+
+
+<body>
+  {% include "header.html" %}
+  <h1>Smuggling Control Of Trees</h1>
+  
+    <table class="tableAlign">
+    
+        <tr>
+          <th>Sensor </th>
+          <th> 🢂 </th>
+          <th>Real-Time Data</th>
+        </tr>
+
+        <tr>
+          <td>object Detection Status </td>
+          <td> 🢂 </td>
+          <td>{{object_detection}}</td>
+          </tr>
+
+        <tr>
+        <td>Flame Status</td>
+        <td> 🢂 </td>
+        <td>{{flame}}</td>
+        </tr>
+
+        <tr>
+        <td>Flex Status</td>
+        <td> 🢂 </td>
+        <td>{{flex}}</td>
+        </tr>
+
+        <tr>
+        <td>GPS </td>
+        <td> 🢂 </td>
+        <td>
+          <table border="5px" bordercolor="#F35557" style="width:60%;" align="center" >
+          <h6 align="center">Latitude & Longitude </h6>
+          <tr>
+          <td>Latitude</td>
+          <td>{{gpsLatitude}}</td>
+          </tr>
+          <tr>
+          <td >Longitude</td>
+          <td>{{gpsLongitude}}</td>
+          </tr>
+          </table>
+          </td>
+          </tr>
+
+          <tr>
+            <td>MPU </td>
+            <td> 🢂 </td>
+            <td>
+              <table border="5px" bordercolor="#F35557" style="width:60%;" align="center">
+              <h6 align="center">Accelerometer , Gyro Rotation & Temperature </h6>
+              <tr>
+              <td>Accelerometer </td>
+              <td>{{mpuAcceleromter}}</td>
+              </tr>
+              <tr>
+              <td>Gyro Rotation</td>
+              <td>{{mpuGYROROTATION}}</td>
+              </tr>
+              <tr>
+                <td>Temperature</td>
+                <td>{{mpuTEMPERATURE}}</td>
+                </tr>
+              </table>
+              </td>
+            </tr>
+
+        
+
+        <tr>
+        <td>Ph Status </td>
+        <td> 🢂 </td>
+        <td>{{PHsensor}}</td>
+        </tr>
+
+        
+
+                                    
+
+     </table>
+     <br>
+     <input type="button" class="refreshButton" value="Refresh" onClick="history.go(0)">
+     <div class="refresher">
+       
+       <!-- <input type="button" value="Reload previous session" onClick="history.go(-1)"> --> 
+     </div>
+     
+     
+     {% include "footer.html" %}
+</body>
+</html>
+
+
+
+
+
+
